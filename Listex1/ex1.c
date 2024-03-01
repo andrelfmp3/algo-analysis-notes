@@ -1,16 +1,15 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-void elementoMax (int tamanho, int array[]);
+int elementoMax (int tamanho, int array[]);
+int instrucoes = 0; //conta instrucoes
 
 int main(){
 
     int tamanho;
-    int instrucoes = 0; 
 
     printf("Entre com o tamanho do Array de inteiros: ");
     scanf("%d", &tamanho);         
-                                                                                instrucoes = instrucoes +1;
 
     int array[tamanho];
 
@@ -21,23 +20,22 @@ int main(){
         scanf("%d", &valor);     
 
         array[i] = valor;
-                                                                            instrucoes = instrucoes +1;
     }
 
-    elementoMax(tamanho, array);
-    printf("Quantidade de instrucoes: %d", instrucoes);
+    printf("O maior elemento do Array é %d ", elementoMax(tamanho, array));
+    printf("(Num. Operacoes = %d )", instrucoes);
 
     return 0;
 
 }
 
-void elementoMax (int tamanho, int array[]){
+int elementoMax (int tamanho, int array[]){
     int maiorValor = array[0];
-    for(int i = 0; i < tamanho; i++){ 
+    for(int i = 1; i < tamanho; i++){ //int i = 0 é errado? tamanho -1 funciona igualmente 
         if(maiorValor < array[i]){
             maiorValor = array[i];
         }
-                                                                            instrucoes = instrucoes +1;
+        instrucoes += 1;
     }
-    printf("O maior elemento do array e: %d \n\n", maiorValor);
+    return maiorValor;
 }
