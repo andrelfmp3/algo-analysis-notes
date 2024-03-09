@@ -25,3 +25,21 @@ void insertionSort(int array[], int n) {
         array[j + 1] = chave;
     }
 }
+
+void insertionSort(int array[], int tamanho) {
+    int chave;
+
+    for (int j=1; j < tamanho; j++) {
+        chave = array[j];
+        printf(" - %d", chave);
+        int i = j-1;
+
+        while ( (i>=0) & (array[i] > chave ) ) {
+            array[i+1] = array[i];
+            i--;
+        }
+
+        array[i+1] = chave;
+        imprimeArray(array, tamanho, "Ordenando");
+    }
+}
