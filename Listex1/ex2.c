@@ -2,20 +2,22 @@
 #include <stdlib.h>
 #include <time.h>
 
-int ehPrimo(int n);
+int contador = 0; //variável global, conta instruções
 
-int contador = 0;//variavel global
+//declaração de métodos
+int ehPrimo(int n);
 
 int main(){
 
-    //srand( time(NULL) );
-    //int numero = rand() % 100; //resto é sempre de 1 a 99
-    int numero = 41;
+    srand( time(NULL) );
+    int numero = rand() % 100; //resto é sempre de 1 a 99
+    printf("Numero inteiro gerado aleatóriamente: %d\n", numero);
 
-    if ( ehPrimo(numero) == 1 ){
+    if (ehPrimo(numero) == 1){
         printf("O número %d eh Primo ", numero);
         printf("(Num. Operacoes = %d)", contador);
-    } else {
+    }
+    else {
         printf("O numero %d NAO eh Primo ", numero);
         printf("(Num. Operacoes = %d)", contador);
     }
@@ -23,18 +25,14 @@ int main(){
     return 0;
 }
 
-int ehPrimo(int n) {
-    if( n % 2 == 0 ){
-        return 0; //nao é primo
-        contador++;
-    } else {
-        for(int i = 3; i < n/2; i+=2) { // dividir por 2 (apartir da metade do nímero nn existe divisor)
-            contador++;
-            if(n % i == 0) {
-                return 0; //nao é primo
-                break;
-            }
+int ehPrimo(int n){
+    int primo = 1;
+    for (int i = 2; i <= n / 2; i++){ // dividir por 2
+        contador += 1;
+        if (n % i == 0){
+            primo = 0;
+            break;
         }
     }
-    return 1; //é primo
+    return primo;
 }
