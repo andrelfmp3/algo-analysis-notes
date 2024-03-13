@@ -62,7 +62,7 @@ void insertionSortInvertido(int array[], int tamanho) {
         chave = array[j];
         int i = j - 1;
 
-        while((i >= 0) && (array[i] > chave)) { 
+        while((i >= 0) && (array[i] < chave)) { 
             array[i + 1] = array[i];
             i--;
             contador = contador + 1;
