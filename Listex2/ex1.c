@@ -1,3 +1,4 @@
+// André Lyra Fernandes - Resolvido
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -17,24 +18,8 @@ int main() {
 
     int array[tamanho];
 
-    array[0] = 62;
-    array[1] = 89;
-    array[2] = 23;
-    array[3] = 60;
-    array[4] = 23;
-    array[5] = 13;
-    array[6] = 87;
-    array[7] = 32;
-    array[8] = 61;
-    array[9] = 17;
-    array[10] = 2;
-    array[11] = 85;
-    array[12] = 3;
-    array[13] = 86;
-    array[14] = 3;
-
     //Gerando o array 
-    //geraArrayInteiro(array, n);
+    geraArrayInteiro(array, tamanho);
     printf("Ordenacao\n\n");
     imprimeArray(array, tamanho, "Array Desord. []: ");
     printf("\n");
@@ -74,11 +59,11 @@ void insertionSortInvertido(int array[], int tamanho) {
     }
 }
 
-// método para gerar array com valores aleatórios (%100 para fins de organização)
-//void geraArrayInteiro(int array[], int n) {
-//    srand(time(NULL));
-//
-//    for(int i = 0; i < n; i++) {
-//        array[i] = rand() % 100;
-//    }     
-//}
+//método para gerar array com valores aleatórios (%100 para fins de organização)
+void geraArrayInteiro(int array[], int n) {
+    srand(time(NULL));
+
+    for(int i = 0; i < n; i++) {
+        array[i] = rand() % 100;
+    }     
+}
