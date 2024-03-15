@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <time.h>
 
+// Declaração dos métods
 void imprimeArray(int array[], int tamanho);
 void procuraValor(int array[], int tamanho, int numero);
 
@@ -16,7 +17,7 @@ int main() {
 
     int array[tamanho];
 
-    srand(time(NULL));
+    srand(time(NULL)); 
 
     for (int i = 0; i < tamanho; i++) {
         array[i] = rand() % 100;
@@ -32,6 +33,7 @@ int main() {
     return 0;
 }
 
+// Método que imprime na tela array
 void imprimeArray(int array[], int tamanho) {
     printf("Array Gerado = ");
     for (int i = 0; i < tamanho; i++) {
@@ -40,6 +42,7 @@ void imprimeArray(int array[], int tamanho) {
     printf("\n");
 }
 
+// Método que procura e imprime valor específico no array (caso ele for encontrado)
 void procuraValor(int array[], int tamanho, int numero) {
     for (int i = 0; i < tamanho; i++) {
         if (numero == array[i]) {
