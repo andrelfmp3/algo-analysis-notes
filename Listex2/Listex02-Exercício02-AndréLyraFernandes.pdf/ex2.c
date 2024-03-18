@@ -1,0 +1,1 @@
+/home/andre/Documentos/GitHub/projeto-e-analise-de-algoritmos/Listex2/ex2.c
