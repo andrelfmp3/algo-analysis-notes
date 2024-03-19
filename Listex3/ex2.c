@@ -7,7 +7,6 @@ void MergeSortRecursivo(int A[], int p, int r, int tamanho);
 void IntercalaComSentinela(int A[], int p, int q, int r); // baseado em pseudo código
 void ImprimeArrayInteiro(int array[], int tamanho, char a[]);
 
-
 int main(){
 
     int tamanho;
@@ -35,7 +34,6 @@ int main(){
     ImprimeArrayInteiro(array, tamanho, "Array Desord. [] =");
     MergeSortRecursivo(array, 0, tamanho-1, tamanho);
     ImprimeArrayInteiro(array, tamanho, "Array Ord.    [] =");
-
 
     free(array); //REVER    
     return 0; 

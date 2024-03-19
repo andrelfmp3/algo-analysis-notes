@@ -3,7 +3,7 @@
 #include <time.h>
 
 void geraArrayInteiro(int array[], int tamanho);
-void MergeSortRecursivo(int A[], int p, int r, int tamanho);
+void MergeSortIterativo(int A[], int p, int r, int tamanho);
 void IntercalaSemSentinela(int A[], int p, int q, int r); // baseado em pseudo código
 void ImprimeArrayInteiro(int array[], int tamanho, char a[]);
 
@@ -34,7 +34,7 @@ int main(){
 
 
     ImprimeArrayInteiro(array, tamanho, "Array Desord. [] =");
-    MergeSortRecursivo(array, 0, tamanho-1, tamanho);
+    MergeSortInterativo(array, 0, tamanho-1, tamanho);
     ImprimeArrayInteiro(array, tamanho, "Array Ord.    [] =");
 
 
@@ -58,16 +58,21 @@ void ImprimeArrayInteiro(int array[], int tamanho, char a[]){
     printf("\n"); 
 }
 
-void MergeSortRecursivo(int A[], int p, int r, int tamanho) { 
-    if (p < r) {
-        int q = (p + r) / 2;
-        ImprimeArrayInteiro(A, tamanho, "Array Ord.    [] =");
-        MergeSortRecursivo(A, p, q, tamanho);
-        MergeSortRecursivo(A, q + 1, r, tamanho);
-        IntercalaSemSentinela(A, p, q, r);
-        ImprimeArrayInteiro(A, tamanho, "Array Ord.    [] =");
+void MergeSortIterativo(int A[], int p, int r, int tamanho) {
+    int q;
+    for (int tamanho_atual = 1; tamanho_atual <= r; tamanho_atual = 2 * tamanho_atual) {
+        for (p = 0; p < r; p += 2 * tamanho_atual) {
+            q = p + tamanho_atual - 1;
+            int fim_direita = p + 2 * tamanho_atual - 1;
+            if (fim_direita < r) {
+                IntercalaSemSentinela(A, p, q, fim_direita);
+            } else {
+                IntercalaSemSentinela(A, p, q, r);
+            }
+        }
     }
 }
+
 
 void IntercalaSemSentinela(int A[], int p, int q, int r) {
     int B[];
