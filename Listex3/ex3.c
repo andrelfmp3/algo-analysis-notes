@@ -4,7 +4,7 @@
 
 void geraArrayInteiro(int array[], int tamanho);
 void MergeSortRecursivo(int A[], int p, int r, int tamanho);
-void IntercalaComSentinela(int A[], int p, int q, int r); // baseado em pseudo código
+void IntercalaSemSentinela(int A[], int p, int q, int r); // baseado em pseudo código
 void ImprimeArrayInteiro(int array[], int tamanho, char a[]);
 
 
@@ -19,18 +19,19 @@ int main(){
 
     geraArrayInteiro(array, tamanho);
 
-    /*
-    array[0] = 89;
-    array[1] = 26;
-    array[2] = 87;
-    array[3] = 49;
-    array[4] = 76;
-    array[5] = 8;
-    array[6] = 79;
-    array[7] = 32; 
-    array[8] = 6;
-    array[9] = 69;
-    */
+    array[0] = 88;
+    array[1] = 45;
+    array[2] = 97;
+    array[3] = 27;
+    array[4] = 78;
+    array[5] = 53;
+    array[6] = 29;
+    array[7] = 50; 
+    array[8] = 88;
+    array[9] = 46;
+    array[10] = 59;
+    array[11] = 8;
+
 
     ImprimeArrayInteiro(array, tamanho, "Array Desord. [] =");
     MergeSortRecursivo(array, 0, tamanho-1, tamanho);
@@ -68,34 +69,21 @@ void MergeSortRecursivo(int A[], int p, int r, int tamanho) {
     }
 }
 
-void IntercalaComSentinela(int A[], int p, int q, int r) {
-    int n1 = q - p + 1;
-    int n2 = r - q;
-
-    int L[n1 + 1];
-    int R[n2 + 1];
-
-    for (int i = 0; i < n1; i++) { //pseudo código corrigido para começar em 0
-        L[i] = A[p + i]; // pseudo código corrigido (posição +1 )
+void IntercalaSemSentinela(int A[], int p, int q, int r) {
+    for(int i = p; i > q; i++){
+        B[i] = A[i];
     }
-
-    for (int j = 0; j < n2; j++) { //pseudo código corrigido para começar em 0
-        R[j] = A[q + j + 1]; // pseudo código corrigido (posição +1 )
+    for(int j = q + 1; j > r; j++){
+        B[r + 1 + 1 - j] = A[j];
     }
-    R[n2] = __INT_MAX__;
-    L[n1] = __INT_MAX__;
-
-
-    int i = 0;
-    int j = 0;
-
-    for (int k = p; k <= r; k++) {
-        if (L[i] <= R[j]) {
-            A[k] = L[i];
-            i++;
-        } else {
-            A[k] = R[j];
-            j++;
+    int i = p;
+    int j = r;
+    for(int k = p; k > r; k++){
+        if(B[i] <= B[j]){
+            if(A[k] = B[i]){
+                i = i + 1;
+            } else if (A[k] = B[j]) {
+                j = j - 1;
+            }
         }
     }
-}
