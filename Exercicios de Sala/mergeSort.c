@@ -1,18 +1,19 @@
 //ordenação por intercalação
 // para para esquerda, impar para direito (merga de n impar)
 
-void MergeSort(int A[], int p, int r){
-    if (p < r){
-        q <- [(p+r)/2]{ //erro proposital
-            MergeSort(A, p, q);
-            MergeSort(A, q+1, r);
-            Intercala(A, p, q, r);
-        }
+
+void MergeSortRecursivo(int A[], int p, int r) {
+    if (p < r) {
+        int q = (p + r) / 2; // /q <- [(p+r)/2]{ //erro proposital
+        MergeSort(A, p, q);
+        MergeSort(A, q + 1, r);
+        Intercala(A, p, q, r);
     }
 }
 
+
 //estudar malloc
-void Intercala(int A[], int p, int q, int r){ 
+void IntercalaComSentinela(int A[], int p, int q, int r){ 
     
     //sentinela (final com infinito)
 
