@@ -31,6 +31,8 @@ int main(){
     array[9] = 69;
     */
 
+    printf("\n"); //alinha
+    printf("Ordenacao\n");
     ImprimeArrayInteiro(array, tamanho, "Array Desord. [] =");
     MergeSortRecursivo(array, 0, tamanho-1, tamanho);
     ImprimeArrayInteiro(array, tamanho, "Array Ord.    [] =");

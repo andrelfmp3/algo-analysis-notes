@@ -37,7 +37,7 @@ int main()
     insertionSort(arrayTemp, n);
     imprimeArray(arrayTemp, n, "Array Ordenado");
     printf("\n");
-    // system("pause"); para windows
+    system("pause");
 
     //Ordenando o array por Merge Sort Sem Sentinela
     printf("\n Algoritmo Merge Sort Sem Sentinela: \n");
@@ -46,7 +46,7 @@ int main()
     mergeSort(arrayTemp, 0, n-1);
     imprimeArray(arrayTemp, n, "Array Ordenado");
     printf("\n");
-    // system("pause"); para windows
+    system("pause");
 
     return 0;
 }
