@@ -1,7 +1,9 @@
+// André Lyra Fernandes bc303139x RESOLVIDO
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
+// Declaração das funções
 void geraArrayInteiro(int array[], int tamanho);
 void MergeSortIterativo(int A[], int p, int r, int tamanho);
 void IntercalaSemSentinela(int A[], int p, int q, int r); // baseado em pseudo código
@@ -19,21 +21,6 @@ int main(){
 
     geraArrayInteiro(array, tamanho);
 
-    /*
-    array[0] = 75;
-    array[1] = 35;
-    array[2] = 59;
-    array[3] = 36;
-    array[4] = 25;
-    array[5] = 51;
-    array[6] = 42;
-    array[7] = 56; 
-    array[8] = 82;
-    array[9] = 26;
-    array[10] = 13;
-    array[11] = 1;
-    */
-
     printf("\n"); //alinha
     printf("Ordenacao\n");
     ImprimeArrayInteiro(array, tamanho, "Array Desord. [] =");
@@ -46,6 +33,7 @@ int main(){
 
 }
 
+// Função para gerar array com números inteiros aleatórios 
 void geraArrayInteiro(int array[], int tamanho) {
     srand(time(NULL));
     for(int i = 0; i < tamanho; i++) {
@@ -53,6 +41,7 @@ void geraArrayInteiro(int array[], int tamanho) {
     }     
 }
 
+// Função para imprimir array inteiro
 void ImprimeArrayInteiro(int array[], int tamanho, char a[]){
     printf("%s", a);
     for(int i = 0; i < tamanho; i++){
@@ -61,6 +50,7 @@ void ImprimeArrayInteiro(int array[], int tamanho, char a[]){
     printf("\n"); 
 }
 
+// Função MergeSort Iterativo
 void MergeSortIterativo(int array[], int p, int r, int tamanho) {
     int q;
     for (int tamanho_atual = 1; tamanho_atual <= r; tamanho_atual = 2 * tamanho_atual) {
@@ -78,7 +68,7 @@ void MergeSortIterativo(int array[], int p, int r, int tamanho) {
     }
 }
 
-
+// Função Intercala sem Sentinela
 void IntercalaSemSentinela(int A[], int p, int q, int r) {
     //pseudocódigo adaptado com conteúdo de aula
     int i, j;

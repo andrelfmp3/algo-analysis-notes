@@ -1,10 +1,12 @@
+// André Lyra Fernandes bc303139x RESOLVIDO
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
+// Declaração das funções
 void geraArrayInteiro(int array[], int tamanho);
 void MergeSortRecursivo(int A[], int p, int r, int tamanho);
-void IntercalaComSentinela(int A[], int p, int q, int r); // baseado em pseudo código
+void IntercalaComSentinela(int A[], int p, int q, int r); 
 void ImprimeArrayInteiro(int array[], int tamanho, char a[]);
 
 int main(){
@@ -18,19 +20,6 @@ int main(){
 
     geraArrayInteiro(array, tamanho);
 
-    /*
-    array[0] = 89;
-    array[1] = 26;
-    array[2] = 87;
-    array[3] = 49;
-    array[4] = 76;
-    array[5] = 8;
-    array[6] = 79;
-    array[7] = 32; 
-    array[8] = 6;
-    array[9] = 69;
-    */
-
     printf("\n"); //alinha
     printf("Ordenacao\n");
     ImprimeArrayInteiro(array, tamanho, "Array Desord. [] =");
@@ -42,6 +31,7 @@ int main(){
 
 }
 
+// Função para gerar array com números inteiros aleatórios 
 void geraArrayInteiro(int array[], int tamanho) {
     srand(time(NULL));
     for(int i = 0; i < tamanho; i++) {
@@ -49,6 +39,7 @@ void geraArrayInteiro(int array[], int tamanho) {
     }     
 }
 
+// Função para imprimir array inteiro
 void ImprimeArrayInteiro(int array[], int tamanho, char a[]){
     printf("%s", a);
     for(int i = 0; i < tamanho; i++){
@@ -57,6 +48,7 @@ void ImprimeArrayInteiro(int array[], int tamanho, char a[]){
     printf("\n"); 
 }
 
+// Função MergeSort Recursivo
 void MergeSortRecursivo(int A[], int p, int r, int tamanho) { 
     if (p < r) {
         int q = (p + r) / 2;
@@ -68,6 +60,7 @@ void MergeSortRecursivo(int A[], int p, int r, int tamanho) {
     }
 }
 
+// Função Intercala com Sentinela
 void IntercalaComSentinela(int A[], int p, int q, int r) {
     int n1 = q - p + 1;
     int n2 = r - q;
